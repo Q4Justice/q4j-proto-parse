@@ -9,13 +9,13 @@ jobs:
       run:
         working-directory: ${{ github.workspace }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - name: 'Ensure package.json version has been incremented'
         uses: Q4Justice/package-version-check@v1.0.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           package-file: 'package.json'
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v5
         with:
           node-version: '16'
       - run: 'npm install'
